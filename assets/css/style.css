@@ -332,11 +332,6 @@ img.alignleft {
 	opacity: 1;
 }
 
-.form-control:-ms-input-placeholder {
-	color: #ccc;
-	opacity: 1;
-}
-
 .form-control::placeholder {
 	color: #ccc;
 	opacity: 1;
@@ -380,6 +375,10 @@ input[type=month].form-control {
 	height: 100vh;
 }
 
+.opacity {
+	opacity: 0.5;
+}
+
 .page-entertainment .animation,
 .page-food .animation {
 	-webkit-animation: flickerAnimation 1.5s infinite;
@@ -389,6 +388,11 @@ input[type=month].form-control {
 .page {
 	background-color: #FBE2E6;
 	height: 100vh;
+}
+
+.page-child {
+	max-width: 63rem;
+	margin: 0 auto;
 }
 
 .page-wrap {

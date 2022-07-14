@@ -17,6 +17,10 @@
     height: 100vh;
 }
 
+.opacity {
+    opacity: .5;
+}
+
 .page-entertainment, .page-food {
     .animation {
         -webkit-animation: flickerAnimation 1.5s infinite;
@@ -29,6 +33,11 @@
 .page {
     background-color: #FBE2E6;
     height: 100vh;
+
+    &-child {
+        max-width: rem($container-width + $grid-gutter-width*2);
+        margin: 0 auto;
+    }
     
     &-wrap {
         padding: rem(30px) rem($grid-gutter-width);
