@@ -383,8 +383,8 @@ input[type=month].form-control {
 
 .page-entertainment .animation,
 .page-food .animation {
-	-webkit-animation: flickerAnimation 2s infinite;
-	animation: flickerAnimation 2s infinite;
+	-webkit-animation: flickerAnimation 1.5s infinite;
+	animation: flickerAnimation 1.5s infinite;
 }
 
 .page {
@@ -620,7 +620,7 @@ input[type=month].form-control {
 }
 
 50% {
-	opacity: 0.5;
+	opacity: 0.3;
 }
 
 100% {
@@ -636,7 +636,7 @@ input[type=month].form-control {
 }
 
 50% {
-	opacity: 0.5;
+	opacity: 0.3;
 }
 
 100% {
