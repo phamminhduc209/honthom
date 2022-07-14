@@ -1,6 +1,6 @@
 // grid
 $grid-gutter-width: 15px !default;
-$container-width: 414px !default;
+$container-width: 600px !default;
 
 $displays: none, block, flex !default;
 
@@ -49,7 +49,7 @@ $primary: #062103;
 $gray-100: #f0f0f0;
 $gray-300: #ccc;
 
-$body-color : $primary;
+$body-color : $dark;
 $body-bg: $white !default;
 $border-color: $gray-300 !default;
 

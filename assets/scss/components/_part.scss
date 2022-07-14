@@ -1,12 +1,14 @@
 .wrap {
     position: relative;
     perspective: 1000px;
-    max-width: rem(1000px);
-    margin: 0 auto;
+    height: 100%;
+    background-color: #FBE2E6;
+    overflow: hidden;
 
     svg {
-        max-width: 100%;
-        max-height: 100vh;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
     }
 }
 
@@ -19,58 +21,19 @@
     }
 }
 
-@keyframes flickerAnimation {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@-o-keyframes flickerAnimation {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@-moz-keyframes flickerAnimation {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@-webkit-keyframes flickerAnimation {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.page-detail {
+.page {
     background-color: #FBE2E6;
+    height: 100%;
+    
+    &-wrap {
+        padding: rem(30px) rem($grid-gutter-width);
+    }
 }
 
 .header {
     background-color: #FFCC4D;
     padding: rem(20px) 0;
+    position: relative;
 
     &-icon {
         display: flex;
@@ -85,48 +48,80 @@
     }
 
     &-ttl {
-        background-color: #F20000;
-        color: $white;
-        max-width: rem(174.2539px);
-        height: rem(39.4069px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        font-size: rem(17.54px);
-        letter-spacing: .01em;
-        border-radius: rem(20px);
         margin: rem(15px) auto rem(-35px);
+        text-align: center;
 
-        &::before, &::after {
-            content: "";
-        }
-
-        &::before {
-            background-color: transparent;
-            border: 2.4942px solid $white;
+        span {
             border-radius: rem(20px);
-            position: absolute;
-            top: rem(2px);
-            right: rem(2px);
-            bottom: rem(2px);
-            left: rem(2px);
-            margin: 0 auto;
-        }
+            background-color: #F20000;
+            color: $white;
+            font-size: rem(17px);
+            height: rem(40px);
+            display: inline-block;
+            line-height: rem(40px);
+            position: relative;
+            text-align: center;
+            letter-spacing: .01em;
+            padding: 0 rem(25px);
 
-        &::after {
-            background: url(../images/icon_right.svg) no-repeat;
-            background-size: 100% 100%;
-            width: rem(6.4309px);
-            height: rem(10.4367px);
-            position: absolute;
-            top: 50%;
-            right: rem(10px);
-            transform: translate(0, -50%);
+            &::before, &::after {
+                content: "";
+            }
+    
+            &::before {
+                background-color: transparent;
+                border: 2.4942px solid $white;
+                border-radius: rem(20px);
+                position: absolute;
+                top: rem(2px);
+                right: rem(2px);
+                bottom: rem(2px);
+                left: rem(2px);
+                margin: 0 auto;
+            }
+    
+            &::after {
+                background: url(../images/icon_right.svg) no-repeat;
+                background-size: 100% 100%;
+                width: rem(6.4309px);
+                height: rem(10.4367px);
+                position: absolute;
+                top: 50%;
+                right: rem(10px);
+                transform: translate(0, -50%);
+            }
         }
+    }
+
+    &-back {
+        background: url(../images/icon_back.svg) no-repeat center right;
+        background-size: rem(26px);
+        color: #004E5B;
+        font-size: rem(17.54px);
+        font-weight: bold;
+        padding-right: rem(30px);
+        position: absolute;
+        top: rem(8px);
+        right: rem(10px);
     }
 }
 
-.main {
-    padding: rem(30.6906px) 0;
+.detail {
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: rem(30px);
+        }
+
+        &__ttl {
+            font-size: rem(20px);
+            text-align: center;
+            margin-bottom: rem(5px);
+        }
+
+        &__txt {
+            font-size: rem(15px);
+            font-weight: $font-weight-medium;
+            text-align: center;
+        }
+    }
 }

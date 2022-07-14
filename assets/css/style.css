@@ -7,13 +7,18 @@ html {
 	overflow-x: hidden;
 }
 
+html,
+body {
+	height: 100%;
+}
+
 body {
 	margin: 0;
 	font-family: "Montserrat", sans-serif;
 	font-size: 1.4rem;
 	font-weight: 400;
 	line-height: 1.6428571429;
-	color: #062103;
+	color: #000;
 	text-align: left;
 	background-color: #fff;
 }
@@ -147,7 +152,7 @@ img.alignleft {
 
 .container {
 	margin: auto;
-	max-width: 44.4rem;
+	max-width: 63rem;
 	width: 100%;
 }
 
@@ -328,6 +333,11 @@ img.alignleft {
 	opacity: 1;
 }
 
+.form-control:-ms-input-placeholder {
+	color: #ccc;
+	opacity: 1;
+}
+
 .form-control::placeholder {
 	color: #ccc;
 	opacity: 1;
@@ -355,13 +365,15 @@ input[type=month].form-control {
 .wrap {
 	position: relative;
 	perspective: 1000px;
-	max-width: 100rem;
-	margin: 0 auto;
+	height: 100%;
+	background-color: #FBE2E6;
+	overflow: hidden;
 }
 
 .wrap svg {
-	max-width: 100%;
-	max-height: 100vh;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
 }
 
 .page-entertainment .animation,
@@ -370,13 +382,19 @@ input[type=month].form-control {
 	animation: flickerAnimation 2s infinite;
 }
 
-.page-detail {
+.page {
 	background-color: #FBE2E6;
+	height: 100%;
+}
+
+.page-wrap {
+	padding: 3rem 1.5rem;
 }
 
 .header {
 	background-color: #FFCC4D;
 	padding: 2rem 0;
+	position: relative;
 }
 
 .header-icon {
@@ -392,26 +410,30 @@ input[type=month].form-control {
 }
 
 .header-ttl {
-	background-color: #F20000;
-	color: #fff;
-	max-width: 17.42539rem;
-	height: 3.94069rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	font-size: 1.754rem;
-	letter-spacing: 0.01em;
-	border-radius: 2rem;
 	margin: 1.5rem auto -3.5rem;
+	text-align: center;
 }
 
-.header-ttl::before,
-.header-ttl::after {
+.header-ttl span {
+	border-radius: 2rem;
+	background-color: #F20000;
+	color: #fff;
+	font-size: 1.7rem;
+	height: 4rem;
+	display: inline-block;
+	line-height: 4rem;
+	position: relative;
+	text-align: center;
+	letter-spacing: 0.01em;
+	padding: 0 2.5rem;
+}
+
+.header-ttl span::before,
+.header-ttl span::after {
 	content: "";
 }
 
-.header-ttl::before {
+.header-ttl span::before {
 	background-color: transparent;
 	border: 2.4942px solid #fff;
 	border-radius: 2rem;
@@ -423,7 +445,7 @@ input[type=month].form-control {
 	margin: 0 auto;
 }
 
-.header-ttl::after {
+.header-ttl span::after {
 	background: url(../images/icon_right.svg) no-repeat;
 	background-size: 100% 100%;
 	width: 0.64309rem;
@@ -434,8 +456,32 @@ input[type=month].form-control {
 	transform: translate(0, -50%);
 }
 
-.main {
-	padding: 3.06906rem 0;
+.header-back {
+	background: url(../images/icon_back.svg) no-repeat center right;
+	background-size: 2.6rem;
+	color: #004E5B;
+	font-size: 1.754rem;
+	font-weight: bold;
+	padding-right: 3rem;
+	position: absolute;
+	top: 0.8rem;
+	right: 1rem;
+}
+
+.detail-item:not(:last-child) {
+	margin-bottom: 3rem;
+}
+
+.detail-item__ttl {
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+
+.detail-item__txt {
+	font-size: 1.5rem;
+	font-weight: 500;
+	text-align: center;
 }
 
 @media (min-width: 576px) {
