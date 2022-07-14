@@ -376,6 +376,11 @@ input[type=month].form-control {
 	margin: 0 auto;
 }
 
+.cls-2 {
+	width: 100vw;
+	height: 100vh;
+}
+
 .page-entertainment .animation,
 .page-food .animation {
 	-webkit-animation: flickerAnimation 2s infinite;
@@ -384,7 +389,6 @@ input[type=month].form-control {
 
 .page {
 	background-color: #FBE2E6;
-	height: 100%;
 }
 
 .page-wrap {

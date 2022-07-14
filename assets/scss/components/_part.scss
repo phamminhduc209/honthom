@@ -12,6 +12,11 @@
     }
 }
 
+.cls-2 {
+    width: 100vw;
+    height: 100vh;
+}
+
 .page-entertainment, .page-food {
     .animation {
         -webkit-animation: flickerAnimation 2s infinite;
@@ -23,7 +28,6 @@
 
 .page {
     background-color: #FBE2E6;
-    height: 100%;
     
     &-wrap {
         padding: rem(30px) rem($grid-gutter-width);
