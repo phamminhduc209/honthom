@@ -1,0 +1,45 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include mq($breakpoint, min) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    
+        @each $value in $displays {
+            .d#{$infix}-#{$value} { display: $value !important; }
+        }
+    }
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.mr-14 {
+    margin-right: rem(14px);
+}
+
+.mb-3 {
+    margin-bottom: rem(10px);
+}
+
+.hover {
+    transition: opacity .3s ease;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+@include mq('md', min) {
+    .sp {
+        display: none;
+    }
+}
+
+@include mq('md', max) {
+    .pc {
+        display: none;
+    }
+}
