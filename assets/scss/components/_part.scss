@@ -28,6 +28,7 @@
 
 .page {
     background-color: #FBE2E6;
+    height: 100vh;
     
     &-wrap {
         padding: rem(30px) rem($grid-gutter-width);
