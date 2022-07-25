@@ -492,6 +492,13 @@ input[type=month].form-control {
 	text-align: center;
 }
 
+.drag {
+	background-color: #fbe2e6;
+	max-width: 60rem;
+	height: 100vh;
+	margin: 0 auto;
+}
+
 @media (min-width: 576px) {
 
 .d-sm-none {
