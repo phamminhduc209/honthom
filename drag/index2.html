@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./jquery-ui.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -30,25 +31,17 @@
     <script src="./jquery-ui.min.js"></script>
     <script src="./jquery.ui.touch-punch.min.js"></script>
     <script>
-        $('.img-pos').draggable({
+        var $reveal = $(".img-pos");
+        $reveal.draggable({
             scroll: false,
             containment: "#container",
             
-            start: function( event, ui ) {
-                // console.log("start top is :" + ui.position.top)
-                // console.log("start left is :" + ui.position.left)
-            },
-            drag: function(event, ui) {
-                // console.log('draging.....');    
-            },
-            stop: function( event, ui ) {
-                // console.log("stop top is :" + ui.position.top)
-                // console.log("stop left is :" + ui.position.left)
+            start: function( event, ui ) {},
 
-                // alert('left:'+ui.position.left + ' top:'+ui.position.top)
-            }    
+            drag: function(event, ui) {},
+
+            stop: function(event, ui) {}
         });
     </script>
-    <!-- <script src="script.js"></script> -->
 </body>
 </html>
