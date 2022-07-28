@@ -12,21 +12,43 @@
 </head>
 <body>
     <div class="drag">
-        <div class="wrap">
-            <img draggable="true" src="../assets/images/icon_1.svg" alt="eyes1" id="eyes1" class="img img-pos">
-            <img draggable="true" src="../assets/images/icon_2.svg" alt="eyes2" id="eyes2" class="img img-pos">
-            <img draggable="true" src="../assets/images/icon_3.svg" alt="eyes3" id="eyes3" class="img img-pos">
-            <img draggable="true" src="../assets/images/icon_4.svg" alt="eyes4" id="eyes4" class="img img-pos">
-            <img draggable="true" src="../assets/images/icon_5.svg" alt="eyes5" id="eyes5" class="img img-pos">
-            <img draggable="true" src="../assets/images/icon_6.svg" alt="mouth1" id="mouth1" class="img img-pos">
-            <img draggable="true" src="../assets/images/icon_7.svg" alt="mouth2" id="mouth2" class="img img-pos">
-            <img draggable="true" src="../assets/images/icon_8.svg" alt="mouth3" id="mouth3" class="img img-pos">
-            <img draggable="true" src="../assets/images/icon_9.svg" alt="mouth4" id="mouth4" class="img img-pos">
-            <img draggable="true" src="../assets/images/icon_10.svg" alt="mouth5" id="mouth5" class="img img-pos">
-            <!-- <img draggable="true" src="../assets/images/line.svg" alt="mouth5" id="line" class="img line"> -->
+        <div class="wrap" id="container">
+            <img draggable="true" src="../assets/images/icon_1.svg" alt="eyes1" id="img-1" class="img img-pos">
+            <img draggable="true" src="../assets/images/icon_2.svg" alt="eyes2" id="img-2" class="img img-pos">
+            <img draggable="true" src="../assets/images/icon_3.svg" alt="eyes3" id="img-3" class="img img-pos">
+            <img draggable="true" src="../assets/images/icon_4.svg" alt="eyes4" id="img-4" class="img img-pos">
+            <img draggable="true" src="../assets/images/icon_5.svg" alt="eyes5" id="img-5" class="img img-pos">
+            <img draggable="true" src="../assets/images/icon_6.svg" alt="mouth1" id="img-6" class="img img-pos">
+            <img draggable="true" src="../assets/images/icon_7.svg" alt="mouth2" id="img-7" class="img img-pos">
+            <img draggable="true" src="../assets/images/icon_8.svg" alt="mouth3" id="img-8" class="img img-pos">
+            <img draggable="true" src="../assets/images/icon_9.svg" alt="mouth4" id="img-9" class="img img-pos">
+            <img draggable="true" src="../assets/images/icon_10.svg" alt="mouth5" id="img-10" class="img img-pos">
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script>
+        $('.img-pos').draggable({
+            scroll: false,
+            containment: "#container",
+            
+            start: function( event, ui ) {
+                // console.log("start top is :" + ui.position.top)
+                // console.log("start left is :" + ui.position.left)
+            },
+            drag: function(event, ui) {
+                // console.log('draging.....');    
+            },
+            stop: function( event, ui ) {
+                // console.log("stop top is :" + ui.position.top)
+                // console.log("stop left is :" + ui.position.left)
+
+                // alert('left:'+ui.position.left + ' top:'+ui.position.top)
+            }    
+        });
+    </script>
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>

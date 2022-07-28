@@ -1,51 +1,68 @@
-(function dragndrop() {
-    let xpos = '';
-    let ypos = '';
-    let whichArt = '';
+document.onselectstart = function (e) {
+    e.preventDefault();
+    return false;
+}
+var slider = document.getElementById('img-1'), container = document.getElementById('container');
 
-    function resetZ() {
-        const imgEl = document.querySelectorAll('img');
-        for (let i = imgEl.length - 1; i >= 0; i--) {
-            imgEl[i].style.zIndex = 5;
+document.mouseState = 'up';
+slider.mouseState = 'up';
+slider.lastMousePosY = null;
+slider.lastMousePosX = null;
+slider.proposedNewPosY = parseInt(slider.style.top, 10); //converts '10px' to 10
+slider.proposedNewPosX = parseInt(slider.style.left, 10);
+
+slider.style.top = '0';
+slider.style.left = '0';
+slider.style.height = '50px';
+slider.style.width = '50px';
+
+container.style.top = '0';
+container.style.left = '0';
+// container.style.height = '100vh';
+// container.style.width = '600px';
+document.onmousedown = function () {
+    document.mouseState = 'down';
+};
+
+document.onmouseup = function () {
+    document.mouseState = 'up';
+    slider.mouseState = 'up';
+};
+slider.onmousedown = function (e) {
+    slider.lastMousePosY = e.pageY;
+    slider.lastMousePosX = e.pageX;
+    slider.mouseState = 'down';
+    document.mouseState = 'down';
+};
+
+slider.onmouseup = function (e) {
+    slider.mouseState = 'up';
+    document.mouseState = 'up';
+};
+var getAtInt = function getAtInt(obj, attrib) {
+    return parseInt(obj.style[attrib], 10);
+};
+
+document.onmousemove = function (e) {
+    if ((document.mouseState === 'down') && (slider.mouseState === 'down')) {
+        slider.proposedNewPosY = getAtInt(slider, 'top') + e.pageY - slider.lastMousePosY;
+        slider.proposedNewPosX = getAtInt(slider, 'left') + e.pageX - slider.lastMousePosX;
+
+        if (slider.proposedNewPosY < getAtInt(container, 'top')) {
+            slider.style.top = container.style.top;
+        } else if (slider.proposedNewPosY > getAtInt(container, 'top') + getAtInt(container, 'height') - getAtInt(slider, 'height')) {
+            slider.style.top = getAtInt(container, 'top') + getAtInt(container, 'height') - getAtInt(slider, 'height') + '%';
+        } else {
+            slider.style.top = slider.proposedNewPosY + '%';
         }
+        if (slider.proposedNewPosX < getAtInt(container, 'left')) {
+            slider.style.left = container.style.left;
+        } else if (slider.proposedNewPosX > getAtInt(container, 'left') + getAtInt(container, 'width') - getAtInt(slider, 'width')) {
+            slider.style.left = getAtInt(container, 'left') + getAtInt(container, 'width') - getAtInt(slider, 'width') + '%';
+        } else {
+            slider.style.left = slider.proposedNewPosX + '%';
+        }
+        slider.lastMousePosY = e.pageY;
+        slider.lastMousePosX = e.pageX;
     }
-
-    function moveStart(e) {
-        whichArt = e.target;
-        xpos = e.offsetX === undefined ? e.layerX : e.offsetX;
-        ypos = e.offsetY === undefined ? e.layerY : e.offsetY;
-        whichArt.style.zIndex = 10;
-    }
-
-    function moveDragOver(e) {
-        e.preventDefault();
-    }
-
-    function moveDrop(e) {
-        e.preventDefault();
-        whichArt.style.left = e.pageX - xpos + 'px';
-        whichArt.style.top = e.pageY - ypos + 'px';
-    }
-
-    function touchStart(e) {
-        e.preventDefault();
-        const whichArt = e.target;
-        const touch = e.touches[0];
-        let moveOffsetX = whichArt.offsetLeft - touch.pageX;
-        let moveOffsetY = whichArt.offsetTop - touch.pageY;
-        resetZ();
-        whichArt.style.zIndex = 10;
-
-        whichArt.addEventListener('touchmove', function () {
-            let posX = touch.pageX + moveOffsetX;
-            let posY = touch.pageY + moveOffsetY;
-            whichArt.style.left = posX + 'px';
-            whichArt.style.top = posY + 'px';
-        }, false);
-    }
-
-    document.querySelector('body').addEventListener('dragstart', moveStart, false);
-    document.querySelector('body').addEventListener('dragover', moveDragOver, false);
-    document.querySelector('body').addEventListener('drop', moveDrop, false);
-    document.querySelector('body').addEventListener('touchstart', touchStart, false);
-})();
+};
