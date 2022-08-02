@@ -2,11 +2,6 @@
 	box-sizing: border-box;
 }
 
-html {
-	font-size: 3vw;
-	overflow-x: hidden;
-}
-
 html,
 body {
 	height: 100%;
@@ -403,8 +398,8 @@ p {
 }
 
 .wrap .img-pos {
-	width: 3rem;
-	height: 3rem;
+	width: 2rem;
+	height: 2rem;
 }
 
 @media (min-width: 576px) {
@@ -436,10 +431,6 @@ p {
 }
 
 @media (min-width: 768px) {
-
-html {
-	font-size: 0.909vw;
-}
 
 .d-md-none {
 	display: none !important;
@@ -509,10 +500,6 @@ html {
 }
 
 @media (min-width: 1200px) {
-
-html {
-	font-size: 10px;
-}
 
 .d-xl-none {
 	display: none !important;

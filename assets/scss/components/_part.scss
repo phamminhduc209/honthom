@@ -185,8 +185,8 @@ p {
         position: absolute;
 
         &-pos {
-            width: rem(30px);
-            height: rem(30px);
+            width: rem(20px);
+            height: rem(20px);
 
             @include mq("md", min) {
                 width: rem(40px);
