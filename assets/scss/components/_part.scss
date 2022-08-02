@@ -38,7 +38,7 @@
 //         max-width: rem($container-width + $grid-gutter-width*2);
 //         margin: 0 auto;
 //     }
-    
+
 //     &-wrap {
 //         padding: rem(30px) rem($grid-gutter-width);
 //     }
@@ -81,7 +81,7 @@
 //             &::before, &::after {
 //                 content: "";
 //             }
-    
+
 //             &::before {
 //                 background-color: transparent;
 //                 border: 2.4942px solid $white;
@@ -93,7 +93,7 @@
 //                 left: rem(2px);
 //                 margin: 0 auto;
 //             }
-    
+
 //             &::after {
 //                 background: url(../images/icon_right.svg) no-repeat;
 //                 background-size: 100% 100%;
@@ -153,50 +153,45 @@ body {
 p {
     text-align: center;
     font-family: Helvetica, Arial, sans-serif;
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1.25em;
     z-index: -1;
 }
 
 .drag {
-    // background-color: #fbe2e6;
+    background-color: #fbe2e6;
     max-width: rem(600px);
     height: 100vh;
     margin: 0 auto;
-    position: relative;
-
-    // img {
-    //     width: 100%;
-    // }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wrap {
-    background-image: url(../images/bg.svg);
+    background-image: url(../images/bg.png);
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: contain;
     background-position: center center;
-    // position: relative;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // bottom: 0;
-    // right: 0;
+    width: 100%;
+    position: relative;
+
+    @include mq('md', min) {
+        height: rem(981px);
+    }
 
     .img {
         position: absolute;
 
         &-pos {
-            width: rem(25px);
-            height: rem(25px);
+            width: rem(30px);
+            height: rem(30px);
 
-            @include mq('md', min) {
-                width: rem(50px);
-                height: rem(50px);
+            @include mq("md", min) {
+                width: rem(40px);
+                height: rem(40px);
             }
         }
     }
 }
-
-// .line {
-//     width: ;
-// }
