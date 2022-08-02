@@ -164,18 +164,35 @@ p {
     height: 100vh;
     margin: 0 auto;
     position: relative;
+
+    // img {
+    //     width: 100%;
+    // }
 }
 
 .wrap {
-    background: url(../images/bg.png) no-repeat center center / cover;
+    background-image: url(../images/bg.svg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
     // position: relative;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
 
     .img {
         position: absolute;
 
         &-pos {
-            width: rem(50px);
-            height: rem(50px);
+            width: rem(25px);
+            height: rem(25px);
+
+            @include mq('md', min) {
+                width: rem(50px);
+                height: rem(50px);
+            }
         }
     }
 }

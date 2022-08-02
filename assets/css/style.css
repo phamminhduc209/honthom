@@ -3,7 +3,7 @@
 }
 
 html {
-	font-size: 10px;
+	font-size: 3vw;
 	overflow-x: hidden;
 }
 
@@ -391,7 +391,10 @@ p {
 }
 
 .wrap {
-	background: url(../images/bg.png) no-repeat center center/cover;
+	background-image: url(../images/bg.svg);
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: center center;
 }
 
 .wrap .img {
@@ -399,8 +402,8 @@ p {
 }
 
 .wrap .img-pos {
-	width: 5rem;
-	height: 5rem;
+	width: 2.5rem;
+	height: 2.5rem;
 }
 
 @media (min-width: 576px) {
@@ -433,6 +436,10 @@ p {
 
 @media (min-width: 768px) {
 
+html {
+	font-size: 0.909vw;
+}
+
 .d-md-none {
 	display: none !important;
 }
@@ -459,6 +466,11 @@ p {
 
 .text-md-center {
 	text-align: center !important;
+}
+
+.wrap .img-pos {
+	width: 5rem;
+	height: 5rem;
 }
 
 }
@@ -492,6 +504,10 @@ p {
 }
 
 @media (min-width: 1200px) {
+
+html {
+	font-size: 10px;
+}
 
 .d-xl-none {
 	display: none !important;

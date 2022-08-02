@@ -13,6 +13,7 @@
 </head>
 <body>
     <div class="drag">
+        <!-- <img src="../assets/images/bg.png" class="drag-img" alt=""> -->
         <div class="wrap" id="container">
             <img draggable="true" src="../assets/images/icon_1.svg" alt="eyes1" id="img-1" class="img img-pos">
             <img draggable="true" src="../assets/images/icon_2.svg" alt="eyes2" id="img-2" class="img img-pos">
@@ -30,18 +31,20 @@
     <script src="./jquery-1.7.2.min.js"></script>
     <script src="./jquery-ui.min.js"></script>
     <script src="./jquery.ui.touch-punch.min.js"></script>
-    <script>
+    <script src="./script.js"></script>
+    <!-- <script>
         var $reveal = $(".img-pos");
         $reveal.draggable({
-            scroll: false,
+            scroll: true,
             containment: "#container",
-            
-            start: function( event, ui ) {},
-
-            drag: function(event, ui) {},
-
-            stop: function(event, ui) {}
+            snap: '.gridlines',
+            stop: function () {
+                var l = ( 100 * parseFloat($(this).position().left / parseFloat($(this).parent().width())) ) + "%" ;
+                var t = ( 100 * parseFloat($(this).position().top / parseFloat($(this).parent().height())) ) + "%" ;
+                $(this).css("left", l);
+                $(this).css("top", t);
+            }
         });
-    </script>
+    </script> -->
 </body>
 </html>

@@ -5,8 +5,16 @@
 }
 
 html {
-	font-size: $font-size-reset;
+	font-size: 3vw;
 	overflow-x: hidden;
+
+	@include mq('md', min) {
+		font-size: .909vw;
+	}
+
+	@include mq('xl', min) {
+		font-size: $font-size-reset;
+	}
 }
 
 html, body {
