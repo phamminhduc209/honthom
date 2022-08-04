@@ -2,6 +2,11 @@
 	box-sizing: border-box;
 }
 
+html {
+	font-size: 2.9vw;
+	overflow-x: hidden;
+}
+
 html,
 body {
 	height: 100%;
@@ -327,6 +332,11 @@ img.alignleft {
 	opacity: 1;
 }
 
+.form-control:-ms-input-placeholder {
+	color: #ccc;
+	opacity: 1;
+}
+
 .form-control::placeholder {
 	color: #ccc;
 	opacity: 1;
@@ -376,30 +386,33 @@ p {
 .drag {
 	background-color: #fbe2e6;
 	max-width: 60rem;
-	height: 100vh;
 	margin: 0 auto;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.wrap {
-	background-image: url(../images/bg.png);
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center center;
+	height: 100vh;
 	width: 100%;
 	position: relative;
 }
 
+.wrap {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
 .wrap .img {
 	position: absolute;
+	z-index: 2;
 }
 
 .wrap .img-pos {
 	width: 2rem;
 	height: 2rem;
+}
+
+.drag-img {
+	z-index: 1;
 }
 
 @media (min-width: 576px) {
@@ -431,6 +444,10 @@ p {
 }
 
 @media (min-width: 768px) {
+
+html {
+	font-size: 0.909vw;
+}
 
 .d-md-none {
 	display: none !important;
@@ -500,6 +517,10 @@ p {
 }
 
 @media (min-width: 1200px) {
+
+html {
+	font-size: 10px;
+}
 
 .d-xl-none {
 	display: none !important;

@@ -161,21 +161,26 @@ p {
 .drag {
     background-color: #fbe2e6;
     max-width: rem(600px);
-    height: 100vh;
     margin: 0 auto;
+    height: 100vh;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    position: relative;
 }
 
 .wrap {
-    background-image: url(../images/bg.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
+    // background-image: url(../images/bg.png);
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: center center;
     width: 100%;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 
     @include mq('md', min) {
         height: rem(981px);
@@ -183,6 +188,7 @@ p {
 
     .img {
         position: absolute;
+        z-index: 2;
 
         &-pos {
             width: rem(20px);
@@ -194,4 +200,8 @@ p {
             }
         }
     }
+}
+
+.drag-img {
+    z-index: 1;
 }

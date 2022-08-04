@@ -1,4 +1,5 @@
 var $reveal = $(".img-pos");
+
 $reveal.draggable({
     scroll: true,
     containment: "#container",
