@@ -1,7 +1,7 @@
 .wrap {
     // position: relative;
     // perspective: 1000px;
-    height: 100%;
+    // height: 100%;
     // background-color: #FBE2E6;
     // overflow: hidden;
 
@@ -160,31 +160,32 @@ p {
 
 .drag {
     background-color: #fbe2e6;
-    max-width: rem(600px);
     margin: 0 auto;
-    height: 100vh;
-    width: 100%;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
     position: relative;
+    width: 100%;
+    height: 100%;
+    
+    @include mq('md', min) {
+        max-width: rem(600px);
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .wrap {
-    // background-image: url(../images/bg.png);
-    // background-repeat: no-repeat;
-    // background-size: contain;
-    // background-position: center center;
+    background-image: url(../images/bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top center;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    height: 100%;
 
-    @include mq('md', min) {
-        height: rem(981px);
-    }
+    // @include mq("md", min) {
+    //     height: rem(981px);
+    // }
 
     .img {
         position: absolute;
